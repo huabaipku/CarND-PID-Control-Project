@@ -25,12 +25,13 @@ They are the parameters to be tuned.
 
 As shown in the following tuning process:
 
-* increase the absolute value of the Kp, would dramatically drive the vehical back to target point, however to large value would lead to overshot and oslation
+* Increasing the absolute value of the Kp, would drive the vehical back to target point quicker, however if the Kp is too large, it would lead to overshoot and oscillation.
 
-* increase the absolute value of the Ki, would prevent some systemic control errors. which cannot reflect in this project. however it is nessacary in reality
+* Increasing the absolute value of the Ki, would prevent steady-state error. If the Ki is too large, the vehical will also oscillate. And the value of Ki should be pretty small. The importance of the Ki is not presented in this project, however it is necessary in real world controller projects.
 
-* increase the absolute value of the Kd, would reduce the overshot, and ease oslation. however, make the correction less powerful. 
-This is why the increase the Kd, make the turns not good
+* Increasing the absolute value of the Kd, would reduce the overshoot, and ease oscillation, at the same time, it will make the correction less powerful. This is the reason why increasing the Kd too much will harm the turning ability of the vehicle.
+
+These observations indeed agree with the characteristics of the three PID controller parameters.
 
 ## Describe how the final hyperparameters were chosen
 The final hyperparameters were tuned manually.
