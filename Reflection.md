@@ -20,15 +20,16 @@ This error is used to prevent systematic control error, or called steady-state e
 Here, we simplify it with the change of the errors between two time points.
 This error is used to smooth the correction process, and prevent overshoot.
 
-Correspondingly, Kp, Ki, and Kd are proportional gain, integral gain, and derivative gain. They are the parameters to be tuned.
+Correspondingly, **Kp, Ki, and Kd are proportional gain, integral gain, and derivative gain.** 
+They are the parameters to be tuned.
 
 As shown in the following tuning process:
 
-*** increase the absolute value of the Kp, would dramatically drive back to target, however to large value would lead to overshot and oslation
+* increase the absolute value of the Kp, would dramatically drive the vehical back to target point, however to large value would lead to overshot and oslation
 
-*** increase the absolute value of the Ki, would prevent some systemic control errors. which cannot reflect in this project. however it is nessacary in reality
+* increase the absolute value of the Ki, would prevent some systemic control errors. which cannot reflect in this project. however it is nessacary in reality
 
-*** increase the absolute value of the Kd, would reduce the overshot, and ease oslation. however, make the correction less powerful. 
+* increase the absolute value of the Kd, would reduce the overshot, and ease oslation. however, make the correction less powerful. 
 This is why the increase the Kd, make the turns not good
 
 ## Describe how the final hyperparameters were chosen
