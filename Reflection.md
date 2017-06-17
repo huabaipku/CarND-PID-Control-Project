@@ -37,23 +37,23 @@ These observations indeed agree with the characteristics of the three PID contro
 The final hyperparameters (Kp, Ki, Kd) were tuned manually.
 
 * **Step1**: make sure the signs of the parameters. Usually, the three parameters are positive. However, depend on the implemention of the errors, these parameters are negative.
-+ Tried (Kp = 1, Ki = 0, Kd = 0), the vehicle went directly off track. which means the parameters should be negative.
+  + Tried (Kp = 1, Ki = 0, Kd = 0), the vehicle went directly off track. which means the parameters should be negative.
 
 * **Step2**: Start with Kp, which is the mean driving force for the controller.
-+ Tried (Kp = -1, Ki = 0, Kd = 0), the vehicle start oscillation, and got worse while went further down track.
-+ Also notice that the absolute value of the starting "cte" is about 7, then the Kp should be reduced.
-+ Tried (Kp = -0.1, Ki = 0, Kd = 0), the vehicle oscillate less, however, the vehicle cannot pass the turn.  
+  + Tried (Kp = -1, Ki = 0, Kd = 0), the vehicle start oscillation, and got worse while went further down track.
+  + Also notice that the absolute value of the starting "cte" is about 7, then the Kp should be reduced.
+  + Tried (Kp = -0.1, Ki = 0, Kd = 0), the vehicle oscillate less, however, the vehicle cannot pass the turn.  
 
 
 * **Step2**: also adjusting Kd, which can smooth the process.
-+ Tried (Kp = -0.1, Ki = 0, Kd = -1), the vehicle became stable, however, the vehicle would on the edges of the track during turns.  
-+ Tried (Kp = -0.2, Ki = 0, Kd = -1), the vehicle turns better but osillate more.  
-+ Notice that the change the "cte" is at about the levels of 0.05, then decided to increase Kd more.
-+ Tried (Kp = -0.2, Ki = 0, Kd = -5), the vehicle had decent performance.  This values were chosen as the final values for the hyperparameters.
+  + Tried (Kp = -0.1, Ki = 0, Kd = -1), the vehicle became stable, however, the vehicle would on the edges of the track during turns.  
+  + Tried (Kp = -0.2, Ki = 0, Kd = -1), the vehicle turns better but osillate more.  
+  + Notice that the change the "cte" is at about the levels of 0.05, then decided to increase Kd more.
+  + Tried (Kp = -0.2, Ki = 0, Kd = -5), the vehicle had decent performance.  This values were chosen as the final values for the hyperparameters.
 
 
 * **Step3**: experimenting Ki, which is relate to steady-state error.
-+ Tried (Kp = -0.2, Ki = 0.1, Kd = -5), and it is a disaster. The Ki should be very small.
-+ Tried (Kp = -0.2, Ki = 0.01, Kd = -5), and it is still a disaster.
-+ Tried (Kp = -0.2, Ki = 0.001, Kd = -5), tnd the vehicle oscilate less.
-+ Tried (Kp = -0.2, Ki = 0.0001, Kd = -5) and  (Kp = -0.2, Ki = 0.00001, Kd = -5). Under these values, the vehicle can finish the track, but there are no obvious improvements. So (Kp = -0.2, Ki = 0, Kd = -5) were chosen as the final values.
+  + Tried (Kp = -0.2, Ki = 0.1, Kd = -5), and it is a disaster. The Ki should be very small.
+  + Tried (Kp = -0.2, Ki = 0.01, Kd = -5), and it is still a disaster.
+  + Tried (Kp = -0.2, Ki = 0.001, Kd = -5), tnd the vehicle oscilate less.
+  + Tried (Kp = -0.2, Ki = 0.0001, Kd = -5) and  (Kp = -0.2, Ki = 0.00001, Kd = -5). Under these values, the vehicle can finish the track, but there are no obvious improvements. So (Kp = -0.2, Ki = 0, Kd = -5) were chosen as the final values.
