@@ -10,13 +10,13 @@ And, on line 25, there is the equation for return total error.
 return Kp_ * p_error_ + Ki_ * i_error_ + Kd_ * d_error_; 
 ```
 
-*P error* is the *proportional error*, which is used to generate the he main correction force.
+**P error** is the **proportional error**, which is used to generate the he main correction force.
 The larger the cte, the larger the P error, hence there will be larger correction force.
 
-*I error* is the *integral error*, which is the sum of previous errors (or recent errors depend on implementation).
+**I error** is the **integral error**, which is the sum of previous errors (or recent errors depend on implementation).
 This error is used to prevent systematic control error, or called steady-state error.
 
-*D error* is the *derivative error*, is the rate of the error changing. 
+**D error** is the **derivative error**, is the rate of the error changing. 
 Here, we simplify it with the change of the errors between two time points.
 This error is used to smooth the correction process, and prevent overshoot.
 
